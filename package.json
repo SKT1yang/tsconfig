@@ -1,0 +1,20 @@
+{
+  "name": "@shuiyangsuan/tsconfig",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SKT1yang/tsconfig.git",
+    "directory": "bases"
+  },
+  "license": "MIT",
+  "description": "Hosts TSConfigs to extend in a TypeScript app, tuned to a particular runtime environment",
+  "keywords": [
+    "tsconfig"
+  ],
+  "version": "0.0.1",
+    "exports": {
+    "./node": "./node.json",
+    "./vite-react": "./vite-react.json",
+    "./vite-vue": "./vite-react.json",
+    "./strictest": "./strictest.json"
+  }
+}
