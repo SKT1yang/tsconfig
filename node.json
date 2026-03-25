@@ -1,29 +1,10 @@
 {
+  "$schema": "https://www.schemastore.org/tsconfig",
+  "display": "Node",
+  "extends": ["./base.json", "./strictest.json"],
   "compilerOptions": {
-    "target": "ES2025", 
-    "lib": ["ES2025"], 
-
-    
-    "module": "nodenext",
-    
-    "resolveJsonModule": true,
-    "verbatimModuleSyntax": true, 
-
-    
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "sourceMap": true, 
-
-    
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
-
-    
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true 
+    "lib": ["ES2024", "ESNext.Array", "ESNext.Collection", "ESNext.Iterator", "ESNext.Promise"],
+    "moduleResolution": "bundler",
+    "rewriteRelativeImportExtensions": true
   }
 }
