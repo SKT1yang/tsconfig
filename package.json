@@ -1,6 +1,6 @@
 {
   "name": "@shuiyangsuan/tsconfig",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Hosts TSConfigs to extend in a TypeScript app, tuned to a particular runtime environment",
   "keywords": [
     "tsconfig"
@@ -16,7 +16,7 @@
     "./vite-react": "./vite-react.json",
     "./strictest": "./strictest.json"
   },
-  "scripts": {
-    "prepublishOnly": "npm version patch"
+  "publishConfig": {
+    "access": "public"
   }
 }
