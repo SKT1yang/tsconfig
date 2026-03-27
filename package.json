@@ -1,6 +1,6 @@
 {
   "name": "@shuiyangsuan/tsconfig",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Hosts TSConfigs to extend in a TypeScript app, tuned to a particular runtime environment",
   "keywords": [
     "tsconfig"
