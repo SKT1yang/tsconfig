@@ -1,14 +1,23 @@
 {
   "$schema": "https://www.schemastore.org/tsconfig",
   "display": "Vite React App",
-  "extends": ["./base.json", "./strictest.json"],
+  "extends": [
+    "./base.json",
+    "./strictest.json"
+  ],
   "compilerOptions": {
-    "lib": ["ES2024", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ES2024",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "moduleResolution": "bundler",
     "moduleDetection": "force",
     "allowImportingTsExtensions": true,
     "noEmit": true,
-    "types": ["vite/client"],
+    "types": [
+      "vite/client"
+    ],
     "jsx": "react-jsx"
   }
 }
