@@ -2,12 +2,19 @@
   "$schema": "https://www.schemastore.org/tsconfig",
   "display": "Base",
   "compilerOptions": {
-    "target": "es2024",
-    "module": "esnext",
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "erasableSyntaxOnly": true,
-    "skipLibCheck": true
+    // Language and Environment - 语言和环境
+    "target": "es2024", // 指定 ECMAScript 目标版本
+
+    // Modules - 模块
+    "module": "esnext", // 指定生成什么模块代码
+
+    // Interop Constraints - 互操作性约束
+    "verbatimModuleSyntax": true, // 只允许使用 ES 模块语法，禁止隐式导入
+    "isolatedModules": true, // 确保每个文件可以独立转译，不依赖其他文件
+    "esModuleInterop": true, // 允许默认导入 CommonJS 模块，实现 ESM 与 CommonJS 互操作
+    "erasableSyntaxOnly": true, // 仅使用在编译后会被擦除的语法，确保类型擦除安全性
+
+    // Completeness - 完整性
+    "skipLibCheck": true // 跳过声明文件（.d.ts）的类型检查
   }
 }

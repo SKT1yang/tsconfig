@@ -6,18 +6,25 @@
     "./strictest.json"
   ],
   "compilerOptions": {
-    "lib": [
-      "ES2024",
-      "DOM",
-      "DOM.Iterable"
+    // Language and Environment - 语言和环境
+    "lib": [ // 指定要包含的库文件（类型声明）
+      "ES2024", // ES2024 标准库
+      "DOM", // DOM 类型声明
+      "DOM.Iterable" // DOM 可迭代对象类型
     ],
-    "moduleResolution": "bundler",
-    "moduleDetection": "force",
-    "allowImportingTsExtensions": true,
-    "noEmit": true,
-    "types": [
-      "vite/client"
-    ],
-    "jsx": "react-jsx"
+    "moduleDetection": "force", // 强制将所有文件视为模块
+    "jsx": "react-jsx", // 使用 React JSX 转换（支持 React 17+ 的新 JSX 转换）
+
+    // Modules - 模块
+    "moduleResolution": "bundler", // 使用 bundler 风格的模块解析，支持 package.json 的 exports 字段
+    "allowImportingTsExtensions": true, // 允许导入 .ts 和 .tsx 文件扩展名
+
+    // Emit -  emit 选项
+    "noEmit": true, // 不生成编译输出文件
+
+    // Type Acquisitio n- 类型获取
+    "types": [ // 指定要包含的类型包
+      "vite/client" // Vite 客户端类型
+    ]
   }
 }

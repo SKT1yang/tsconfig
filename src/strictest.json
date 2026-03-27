@@ -2,20 +2,25 @@
   "$schema": "https://www.schemastore.org/tsconfig",
   "display": "Strictest",
   "compilerOptions": {
-    "strict": true,
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "exactOptionalPropertyTypes": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noUncheckedSideEffectImports": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true
+    // Type Checking - 类型检查
+    "strict": true, // 启用所有严格类型检查选项
+    "allowUnreachableCode": false, // 报告无法执行的代码为错误
+    "allowUnusedLabels": false, // 报告未使用的标签为错误
+    "exactOptionalPropertyTypes": true, // 精确处理可选属性类型，禁止隐式添加 undefined
+    "noFallthroughCasesInSwitch": true, // 防止 switch 语句中的 case 穿透
+    "noImplicitOverride": true, // 要求重写方法必须使用 override 修饰符
+    "noImplicitReturns": true, // 确保函数所有路径都有返回值
+    "noPropertyAccessFromIndexSignature": true, // 禁止通过索引签名访问属性时使用点号
+    "noUncheckedIndexedAccess": true, // 索引访问返回的类型包含 undefined
+    "noUnusedLocals": true, // 报告未使用的局部变量为错误
+    "noUnusedParameters": true, // 报告未使用的参数为错误
+    "noUncheckedSideEffectImports": true, // 检查有副作用的导入是否产生实际效果
+
+    // Interop Constraints - 互操作性约束
+    "isolatedModules": true, // 确保每个文件可以独立转译，不依赖其他文件
+    "esModuleInterop": true, // 允许默认导入 CommonJS 模块，实现 ESM 与 CommonJS 互操作
+
+    // Completeness - 完整性
+    "skipLibCheck": true // 跳过声明文件（.d.ts）的类型检查
   }
 }

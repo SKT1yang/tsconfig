@@ -6,14 +6,17 @@
     "./strictest.json"
   ],
   "compilerOptions": {
-    "lib": [
-      "ES2024",
-      "ESNext.Array",
-      "ESNext.Collection",
-      "ESNext.Iterator",
-      "ESNext.Promise"
+    // Language and Environment - 语言和环境
+    "lib": [ // 指定要包含的库文件（类型声明）
+      "ES2024", // ES2024 标准库
+      "ESNext.Array", // ES Next 数组特性
+      "ESNext.Collection", // ES Next 集合特性
+      "ESNext.Iterator", // ES Next 迭代器特性
+      "ESNext.Promise" // ES Next Promise 特性
     ],
-    "moduleResolution": "bundler",
-    "rewriteRelativeImportExtensions": true
+
+    // Modules - 模块
+    "moduleResolution": "bundler", // 使用 bundler 风格的模块解析，支持 package.json 的 exports 字段
+    "rewriteRelativeImportExtensions": true // 自动重写相对导入路径的文件扩展名
   }
 }
