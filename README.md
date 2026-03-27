@@ -14,6 +14,16 @@ npm install @shuiyangsuan/tsconfig
 
 ## 可用配置
 
+### 基础配置
+
+适用于所有 TypeScript 项目，提供基础的 ESM 模块配置。
+
+```json
+{
+  "extends": "@shuiyangsuan/tsconfig/base"
+}
+```
+
 ### Node.js 项目
 
 ```json

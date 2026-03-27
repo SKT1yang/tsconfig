@@ -12,6 +12,7 @@
   },
   "type": "module",
   "exports": {
+    "./base": "./src/base.json",
     "./node": "./src/node.json",
     "./strictest": "./src/strictest.json",
     "./vite-react": "./src/vite-react.json",

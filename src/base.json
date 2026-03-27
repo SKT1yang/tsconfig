@@ -13,7 +13,10 @@
     "isolatedModules": true, // 确保每个文件可以独立转译，不依赖其他文件
     "esModuleInterop": true, // 允许默认导入 CommonJS 模块，实现 ESM 与 CommonJS 互操作
     "erasableSyntaxOnly": true, // 仅使用在编译后会被擦除的语法，确保类型擦除安全性
-
+    
+    // Emit - 辅助函数导入
+    "importHelpers": true, // 从 tslib 导入辅助函数，减少代码重复
+    
     // Completeness - 完整性
     "skipLibCheck": true // 跳过声明文件（.d.ts）的类型检查
   }
