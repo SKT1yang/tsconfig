@@ -10,18 +10,18 @@ TypeScript 编译流程分为多个阶段，不同类型的配置项在不同阶
 
 ### 📋 编译流程阶段总览
 
-| 阶段 | 名称 | 说明 |
-|------|------|------|
-| 1️⃣ | **项目加载阶段**<br>(Project Loading) | 读取和解析 `tsconfig.json`，确定项目结构和包含的文件 |
-| 2️⃣ | **类型获取阶段**<br>(Type Acquisition) | 收集和处理类型声明文件，自动获取全局类型定义 |
-| 3️⃣ | **模块解析阶段**<br>(Module Resolution) | 解析 import/require 语句，根据模块解析策略找到对应的模块文件 |
-| 4️⃣ | **语法分析与类型检查阶段**<br>(Parsing & Type Checking) | 核心阶段，进行语法解析、类型推断和类型检查 |
-| 5️⃣ | **Emit 输出阶段**<br>(Emit Phase) | 生成 JavaScript 代码和相关文件（声明文件、source map 等） |
-| 6️⃣ | **互操作性约束阶段**<br>(Interop Constraints) | 贯穿多个阶段，确保模块系统兼容性和代码一致性 |
-| 7️⃣ | **编辑器与开发体验阶段**<br>(Editor & DX) | 影响 IDE 体验和开发工具行为 |
-| 8️⃣ | **监听模式阶段**<br>(Watch Mode) | 仅在 `--watch` 模式下生效，控制文件和目录的监听策略 |
-| 9️⃣ | **诊断与调试阶段**<br>(Diagnostics) | 用于调试编译过程，输出详细的诊断信息 |
-| 🔟 | **复合项目构建阶段**<br>(Composite Projects) | 用于大型项目的增量编译和项目引用管理 |
+| 阶段 | 名称 | 说明 | 常见配置项 |
+|------|------|------|------------|
+| 1️⃣ | **项目加载阶段**<br>(Project Loading) | 读取和解析 `tsconfig.json`，确定项目结构和包含的文件 | `extends`, `files`, `include`, `exclude`, `references` |
+| 2️⃣ | **类型获取阶段**<br>(Type Acquisition) | 收集和处理类型声明文件，自动获取全局类型定义 | `typeAcquisition.enable`, `typeAcquisition.include`, `typeAcquisition.exclude` |
+| 3️⃣ | **模块解析阶段**<br>(Module Resolution) | 解析 import/require 语句，根据模块解析策略找到对应的模块文件 | `baseUrl`, `paths`, `moduleResolution`, `resolveJsonModule`, `customConditions`, `rewriteRelativeImportExtensions` |
+| 4️⃣ | **语法分析与类型检查阶段**<br>(Parsing & Type Checking) | 核心阶段，进行语法解析、类型推断和类型检查 | `target`, `lib`, `strict`, `noImplicitAny`, `strictNullChecks`, `jsx`, `allowJs`, `checkJs` |
+| 5️⃣ | **Emit 输出阶段**<br>(Emit Phase) | 生成 JavaScript 代码和相关文件（声明文件、source map 等） | `noEmit`, `outDir`, `declaration`, `sourceMap`, `removeComments`, `importHelpers` |
+| 6️⃣ | **互操作性约束阶段**<br>(Interop Constraints) | 贯穿多个阶段，确保模块系统兼容性和代码一致性 | `esModuleInterop`, `verbatimModuleSyntax`, `isolatedModules`, `forceConsistentCasingInFileNames` |
+| 7️⃣ | **编辑器与开发体验阶段**<br>(Editor & DX) | 影响 IDE 体验和开发工具行为 | `plugins`, `disableSizeLimit`, `pretty`, `noErrorTruncation` |
+| 8️⃣ | **监听模式阶段**<br>(Watch Mode) | 仅在 `--watch` 模式下生效，控制文件和目录的监听策略 | `watchOptions.watchFile`, `watchOptions.watchDirectory`, `watchOptions.fallbackPolling` |
+| 9️⃣ | **诊断与调试阶段**<br>(Diagnostics) | 用于调试编译过程，输出详细的诊断信息 | `diagnostics`, `extendedDiagnostics`, `explainFiles`, `listFiles`, `traceResolution` |
+| 🔟 | **复合项目构建阶段**<br>(Composite Projects) | 用于大型项目的增量编译和项目引用管理 | `composite`, `incremental`, `tsBuildInfoFile`, `disableReferencedProjectLoad` |
 
 ---
 
