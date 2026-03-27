@@ -133,6 +133,15 @@ Default: true if rewriteRelativeImportExtensions; false otherwise.
 - 关联属性：开发时写 .ts，发布时输出 .js， rewriteRelativeImportExtensions设为true
 - react项目一般开启 allowImportingTsExtensions 是因为TypeScript 只做类型检查，项目要显式导入.tsx文件而不报错，让 TypeScript 的类型检查与打包器处理非标准扩展名的行为保持一致。
 
+
+#### 何时应该使用？
+- **直接运行 TypeScript 的项目**：如使用 `tsx`、`ts-node`、Deno、Bun，或 Node.js 的 `--experimental-strip-types`。这些环境需要导入路径带有完整扩展名（包括 `.ts`），因此开启此选项能让类型检查通过。
+- **仅做类型检查的项目**：例如使用打包器构建，TypeScript 只负责类型检查（`noEmit: true`），且打包器可以处理 `.ts` 导入。
+- **需要同时开发与发布的库**：可以结合 `rewriteRelativeImportExtensions`，在开发时写 `.ts` 导入，发布时自动改写为 `.js`。
+
+#### 总结
+`allowImportingTsExtensions` 是一个“允许语法”的选项，它本身不改变输出行为。它的主要问题在于必须与 `noEmit` 或 `emitDeclarationOnly` 共存，否则编译会报错；如果要在生成 JavaScript 文件的同时使用，则需要额外配置 `rewriteRelativeImportExtensions` 来修正输出路径。在正确配置下，它可以提升开发体验，让代码在直接运行和打包构建之间更加统一。
+
 ---
 
 ### `baseUrl`
